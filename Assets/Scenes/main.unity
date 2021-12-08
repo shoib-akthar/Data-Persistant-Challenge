@@ -465,6 +465,7 @@ GameObject:
   m_Component:
   - component: {fileID: 220049426}
   - component: {fileID: 220049425}
+  - component: {fileID: 220049427}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -498,6 +499,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &220049427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220049424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8424971577d0f5a44b0d00e744158aad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HighScore: {fileID: 2078529056}
 --- !u!1 &450625940
 GameObject:
   m_ObjectHideFlags: 0
@@ -545,6 +559,7 @@ MonoBehaviour:
   LineCount: 6
   Ball: {fileID: 177912862}
   ScoreText: {fileID: 188020406}
+  Bestscore: {fileID: 2078529056}
   GameOverText: {fileID: 474497238}
 --- !u!1 &455529321
 GameObject:

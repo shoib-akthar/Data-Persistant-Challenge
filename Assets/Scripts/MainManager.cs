@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEditor;
+using System.IO;
+using TMPro;
 
 public class MainManager : MonoBehaviour
 {
@@ -15,11 +17,14 @@ public class MainManager : MonoBehaviour
     public Text Bestscore;
 
     public GameObject GameOverText;
-    
+    public GameObject nameInput;
+
+
     private bool m_Started = false;
     private int m_Points;
     
     private bool m_GameOver = false;
+    public static MainManager Instance;
 
     
     // Start is called before the first frame update
@@ -78,8 +83,51 @@ public class MainManager : MonoBehaviour
         GameOverText.SetActive(true);
         if (m_Points > 0 || m_Points >0)
         {
+           
         }
-            Bestscore.text = ScoreText.text;
+        Bestscore.text = $"Best:"+nameInput+ScoreText.text;
     }
-   
+
+
+
+    private void Awake()
+    {
+        // start of new code
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        // end of new code
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
+    [System.Serializable]
+    class SaveData
+    {
+        public Text Highscore;
+    }
+
+    public void SaveScore()
+    {
+        SaveData data = new SaveData();
+        data.Highscore = Bestscore;
+
+        string json = JsonUtility.ToJson(data);
+
+        File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
+    }
+    public void LoadScore()
+    {
+        string path = Application.persistentDataPath + "/savefile.json";
+        if (File.Exists(path))
+        {
+            string json = File.ReadAllText(path);
+            SaveData data = JsonUtility.FromJson<SaveData>(json);
+
+            Bestscore = data.Highscore;
+        }
+    }
 }
