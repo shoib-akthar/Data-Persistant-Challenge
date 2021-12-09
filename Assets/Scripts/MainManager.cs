@@ -30,6 +30,7 @@ public class MainManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        LoadScore();
         const float step = 0.6f;
         int perLine = Mathf.FloorToInt(4.0f / step);
         
@@ -81,11 +82,12 @@ public class MainManager : MonoBehaviour
     {
         m_GameOver = true;
         GameOverText.SetActive(true);
+        SaveScore();
         if (m_Points > 0 || m_Points >0)
         {
            
         }
-        Bestscore.text = $"Best:"+nameInput+ScoreText.text;
+        Bestscore.text = $"Best:"+ScoreText.text;
     }
 
 
@@ -127,7 +129,7 @@ public class MainManager : MonoBehaviour
             string json = File.ReadAllText(path);
             SaveData data = JsonUtility.FromJson<SaveData>(json);
 
-            Bestscore = data.Highscore;
+            Bestscore.text = data.Highscore.text;
         }
     }
 }

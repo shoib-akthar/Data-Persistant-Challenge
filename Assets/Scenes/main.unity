@@ -465,7 +465,6 @@ GameObject:
   m_Component:
   - component: {fileID: 220049426}
   - component: {fileID: 220049425}
-  - component: {fileID: 220049427}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -499,19 +498,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &220049427
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 220049424}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8424971577d0f5a44b0d00e744158aad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HighScore: {fileID: 2078529056}
 --- !u!1 &450625940
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,6 +547,7 @@ MonoBehaviour:
   ScoreText: {fileID: 188020406}
   Bestscore: {fileID: 2078529056}
   GameOverText: {fileID: 474497238}
+  nameInput: {fileID: 2113500795}
 --- !u!1 &455529321
 GameObject:
   m_ObjectHideFlags: 0
@@ -1965,12 +1952,12 @@ GameObject:
   - component: {fileID: 1691807405}
   - component: {fileID: 1691807404}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: HighscoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1691807403
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1978,16 +1965,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1691807402}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2113500796}
-  m_RootOrder: 1
+  m_Father: {fileID: 2137539498}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 20, y: 75}
+  m_AnchoredPosition: {x: 20, y: -77}
   m_SizeDelta: {x: 332.2, y: 82.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1691807404
@@ -2199,9 +2186,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 785010346}
-  - {fileID: 1691807403}
   m_Father: {fileID: 2137539498}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2439,6 +2425,7 @@ RectTransform:
   - {fileID: 474497239}
   - {fileID: 2078529055}
   - {fileID: 572911425}
+  - {fileID: 1691807403}
   - {fileID: 2113500796}
   m_Father: {fileID: 0}
   m_RootOrder: 6
